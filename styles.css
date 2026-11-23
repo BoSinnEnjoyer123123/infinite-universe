@@ -136,7 +136,7 @@ figure {
 }
 
 .chapter--light .chapter__inner {
-  grid-template-areas: "copy figure" "panorama panorama";
+  grid-template-areas: "copy figure" "panorama panorama" "question question";
 }
 
 .chapter--sequence {
@@ -180,6 +180,7 @@ figure {
 }
 
 .chapter__copy p,
+.chapter__andromeda > p,
 .chapter__question {
   max-width: 49ch;
   margin-top: 0.9rem;
@@ -197,7 +198,8 @@ figure {
   color: #cfdbfa;
 }
 
-.chapter__copy .chapter__question {
+.chapter__copy .chapter__question,
+.chapter--light .chapter__question {
   padding-left: 0.86rem;
   border-left: 1px solid #9183c8;
   color: #cfdbfa;
@@ -264,8 +266,18 @@ figure {
   aspect-ratio: auto;
 }
 
-.figure--panorama {
+.chapter__andromeda {
   grid-area: panorama;
+  min-width: 0;
+}
+
+.chapter__andromeda > p,
+.chapter--light .chapter__question {
+  margin-top: 0;
+}
+
+.chapter__andromeda .figure {
+  margin-top: clamp(1.2rem, 3vw, 2rem);
 }
 
 .figure--panorama img {
@@ -275,6 +287,11 @@ figure {
   border: 1px solid #2b3853;
   border-radius: 0.75rem;
   background: #090b12;
+}
+
+.figure--andromeda-art img {
+  aspect-ratio: 2.15;
+  object-fit: cover;
 }
 
 .figure__credit {
@@ -447,7 +464,7 @@ figure {
   }
 
   .chapter--light .chapter__inner {
-    grid-template-areas: "copy" "figure" "panorama";
+    grid-template-areas: "copy" "figure" "panorama" "question";
   }
 
   .chapter--comparison .chapter__inner {
@@ -470,6 +487,10 @@ figure {
 
   .figure__mobile-note {
     display: inline;
+  }
+
+  .figure--andromeda-art img {
+    aspect-ratio: auto;
   }
 
   .diagram-horizon-tag--outside {

@@ -1,74 +1,50 @@
 .diagram-light {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.32fr) minmax(0, 0.7fr);
-  align-items: center;
-  padding-inline: 7%;
-  background:
-    radial-gradient(ellipse at 22% 48%, #8e521a29, transparent 43%),
-    radial-gradient(ellipse at 86% 50%, #2d5d8b34, transparent 38%),
-    #101626;
-}
-
-.diagram-light__body {
-  position: relative;
-  display: grid;
-  justify-items: center;
-}
-
-.diagram-light__sun {
   display: block;
-  width: 91%;
-  max-width: 8rem;
-  aspect-ratio: 1;
-  mix-blend-mode: screen;
+  aspect-ratio: auto;
 }
 
-.diagram-light__sun img {
+.diagram-light img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.diagram-light__earth {
-  display: block;
-  width: 53%;
-  max-width: 4.5rem;
-  aspect-ratio: 1;
-  border: 1px solid #8fcaffb3;
-  border-radius: 50%;
-  background:
-    radial-gradient(ellipse at 20% 26%, #e2f0ffb3 0%, transparent 24%),
-    radial-gradient(ellipse at 38% 54%, #98c5a5 0%, #5b998530 28%, transparent 36%),
-    radial-gradient(ellipse at 72% 25%, #90c6aa 0%, #5ca3a052 24%, transparent 32%),
-    radial-gradient(circle at 30% 29%, #62a1db, #254a80 63%, #101e37 100%);
-  box-shadow: inset -0.38rem -0.22rem 0.85rem #070b24c9, 0 0 1.1rem #699fe846;
+  height: auto;
 }
 
 .diagram-light__label,
 .diagram-light__duration {
   position: absolute;
-  left: 50%;
+  padding: 0.2rem 0.45rem;
   transform: translateX(-50%);
+  border-radius: 0.3rem;
+  background: #0a1024d9;
   color: #d9e5fb;
-  font-size: clamp(0.76rem, 2.15vw, 0.93rem);
+  font-size: clamp(0.78rem, 1.4vw, 0.96rem);
   line-height: 1.25;
   white-space: nowrap;
 }
 
 .diagram-light__label {
-  top: calc(100% + 0.55rem);
+  bottom: 6%;
+}
+
+.diagram-light__label--sun {
+  left: 21.8%;
+}
+
+.diagram-light__label--earth {
+  left: 84.6%;
 }
 
 .diagram-light__duration {
-  bottom: calc(100% + 0.65rem);
+  bottom: 0.72rem;
+  left: 50%;
   color: #f5d3a4;
   font-variant-numeric: tabular-nums;
 }
 
 .diagram-light__route {
-  position: relative;
-  min-width: 0;
+  position: absolute;
+  top: 48%;
+  inset-inline: 43% 21.5%;
   height: 1px;
 }
 
@@ -255,6 +231,10 @@
     animation: diagram-light-travel 1.9s ease-in-out 0.2s both;
   }
 
+  .andromeda-observation.scene-active img {
+    animation: diagram-andromeda-reveal 1.25s ease-out 0.18s both;
+  }
+
   .scene-active .diagram-sequence__number:not(.diagram-sequence__number--first),
   .scene-active .diagram-coin__case {
     animation: diagram-item-appear 0.48s ease-out var(--diagram-delay) both;
@@ -272,6 +252,11 @@
 @keyframes diagram-light-travel {
   from { left: 0; }
   to { left: 91%; }
+}
+
+@keyframes diagram-andromeda-reveal {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
 }
 
 @keyframes diagram-item-appear {

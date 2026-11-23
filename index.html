@@ -95,53 +95,41 @@
           <div class="chapter__copy">
             <h2 id="light-title">Свет из прошлого</h2>
             <p>Свету от Солнца нужно около восьми минут, чтобы добраться до Земли. Значит, свет, который сейчас падает на подоконник, покинул Солнце примерно восемь минут назад.</p>
-            <p>Свет от Андромеды шёл к нам около двух с половиной миллионов лет. Когда он покинул галактику, на Земле ещё не было городов и телескопов. На снимке — её далёкое прошлое.</p>
-            <p class="chapter__question">Чем дольше свет добирается до нас, тем более ранний момент мы видим. Что же происходит, если свету пока не хватило времени на дорогу?</p>
           </div>
           <figure class="figure">
-            <div class="figure__art" data-scene role="img" aria-label="Импульс света проходит путь от Солнца к Земле. Схема показывает направление движения.">
-              <div class="diagram-art diagram-light" aria-hidden="true">
-                <div class="diagram-light__body">
-                  <picture class="diagram-light__sun">
-                    <img
-                      src="./assets/sun-320.webp"
-                      srcset="./assets/sun-320.webp 320w, ./assets/sun-640.webp 640w"
-                      sizes="(max-width: 46rem) 90px, 140px"
-                      width="320"
-                      height="320"
-                      loading="lazy"
-                      decoding="async"
-                      alt="">
-                  </picture>
-                  <span class="diagram-light__label">Солнце</span>
-                </div>
-                <div class="diagram-light__route">
-                  <span class="diagram-light__duration">≈ 8 минут</span>
-                  <span class="diagram-light__beam"></span>
-                  <span class="diagram-light__signal"></span>
-                </div>
-                <div class="diagram-light__body">
-                  <span class="diagram-light__earth"></span>
-                  <span class="diagram-light__label">Земля</span>
-                </div>
+            <div class="figure__art diagram-light" data-scene="focus" role="img" aria-label="Солнце слева, Земля справа. Световой сигнал движется к Земле. Время пути — около восьми минут.">
+              <img src="./assets/solar-journey.webp" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+              <div class="diagram-light__route" aria-hidden="true">
+                <span class="diagram-light__duration">≈ 8 минут</span>
+                <span class="diagram-light__beam"></span>
+                <span class="diagram-light__signal"></span>
               </div>
+              <span class="diagram-light__label diagram-light__label--sun" aria-hidden="true">Солнце</span>
+              <span class="diagram-light__label diagram-light__label--earth" aria-hidden="true">Земля</span>
             </div>
-            <figcaption>
-              От Солнца до Земли — около 8 минут. Масштаб условный.
-              <span class="figure__credit">Снимок Солнца: NASA/GSFC/Solar Dynamics Observatory</span>
-            </figcaption>
+            <figcaption>От Солнца до Земли — около 8 минут. Художественная визуализация в условном масштабе.</figcaption>
           </figure>
-          <figure class="figure figure--panorama">
-            <picture>
-              <source media="(max-width: 46rem)" srcset="./assets/andromeda-800.webp" width="800" height="400">
-              <img src="./assets/andromeda-1600.webp" width="1600" height="374" alt="Галактика Андромеда на мозаике телескопа «Хаббл» с ярким ядром и полосами тёмной пыли." loading="lazy" decoding="async">
-            </picture>
-            <figcaption>
-              Андромеда на снимке телескопа «Хаббл». Время пути света — около 2,5 миллиона лет.
-              <span class="figure__mobile-note">Фрагмент мозаики.</span>
-              <span class="figure__credit">NASA, ESA, Benjamin Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern). Обработка: Joseph DePasquale (STScI).</span>
-            </figcaption>
-          </figure>
+          <div class="chapter__andromeda">
+            <p>Свет от Андромеды шёл к нам около двух с половиной миллионов лет. Когда он покинул галактику, на Земле ещё не было городов и телескопов. На снимке «Хаббла» — её далёкое прошлое.</p>
+            <figure class="figure figure--panorama figure--andromeda-art">
+              <img src="./assets/andromeda-art.webp" width="1536" height="1024" alt="Иллюстрация наклонённого диска Андромеды с золотистым ядром и тёмными полосами пыли." loading="lazy" decoding="async">
+              <figcaption>Андромеда. Художественная визуализация.</figcaption>
+            </figure>
+            <figure class="figure figure--panorama">
+              <div class="andromeda-observation" data-scene="focus">
+                <picture>
+                  <source media="(max-width: 46rem)" srcset="./assets/andromeda-800.webp" width="800" height="400">
+                  <img src="./assets/andromeda-1600.webp" width="1600" height="374" alt="Галактика Андромеда на мозаике телескопа «Хаббл» с ярким ядром и полосами тёмной пыли." loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <figcaption>
+                Андромеда на снимке телескопа «Хаббл». Время пути света — около 2,5 миллиона лет.
+                <span class="figure__mobile-note">Фрагмент мозаики.</span>
+                <span class="figure__credit">NASA, ESA, Benjamin Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern). Обработка: Joseph DePasquale (STScI).</span>
+              </figcaption>
+            </figure>
+          </div>
+          <p class="chapter__question">Чем дольше свет добирается до нас, тем более ранний момент мы видим. Что же происходит, если свету пока не хватило времени на дорогу?</p>
         </div>
       </section>
 
@@ -494,7 +482,7 @@
           <li>Макс Тегмарк. <cite lang="en">Parallel Universes</cite>, 2003.</li>
           <li>Тамара Дэвис и Чарльз Лайнуивер. <cite lang="en">Expanding Confusion</cite>, 2004.</li>
           <li>Хью Эверетт. <cite lang="en">“Relative State” Formulation of Quantum Mechanics</cite>, 1957.</li>
-          <li>NASA. Снимок Солнца, Solar Dynamics Observatory.</li>
+          <li>NASA. Как свет позволяет наблюдать прошлое Вселенной.</li>
           <li>NASA и ESA. Мозаика Андромеды, космический телескоп «Хаббл».</li>
           <li>NASA, ESA, STScI. Снимок «Креста Эйнштейна» G2237+0305.</li>
           <li>Энн Клири и соавторы. Эксперимент о дежавю и расположении объектов, 2012.</li>

@@ -18,7 +18,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 - Заголовки, абзацы, подписи и источники находятся в `index.html`.
 - Цвета, отступы и правила адаптации находятся в `styles.css`.
-- Обложка, снимки и стили схем находятся в `assets/`. Для снимков Солнца, Андромеды и «Креста Эйнштейна» предусмотрены разные версии для небольших и широких экранов. Новые файлы подключайте относительными путями вида `./assets/image.webp`.
+- Обложка, иллюстрации и стили схем находятся в `assets/`. Для мозаики Андромеды и «Креста Эйнштейна» предусмотрены разные варианты для небольших и широких экранов. Новые файлы подключайте относительными путями вида `./assets/image.webp`.
 - CSS задаёт движение рисунков. Скрипт `script.js` запускает каждую сцену один раз при её появлении на экране.
 
 После правок запустите локальную версию. Проверьте страницу на телефоне и широком экране, затем проверьте статичные кадры с системной настройкой уменьшения движения.
@@ -34,7 +34,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 ## Снимки телескопов
 
-- Солнце, снимок PIA26681. Авторы — NASA/GSFC/Solar Dynamics Observatory. [Карточка NASA](https://science.nasa.gov/photojournal/image-of-sun-from-nasas-solar-dynamics-observatory/).
+- Время пути солнечного света до Земли. [NASA о наблюдении прошлого Вселенной](https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/time-travel-observing-cosmic-history/).
 - Андромеда, мозаика «Хаббл». Авторы — NASA, ESA, Benjamin Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern). Обработка — Joseph DePasquale (STScI). Широкая версия показывает панораму, мобильная — её фрагмент. [Карточка NASA](https://science.nasa.gov/asset/hubble/hubble-m31-phatphast-mosaic/).
 
 - «Крест Эйнштейна» G2237+0305. Авторы — NASA, ESA, STScI. Обе версии сохраняют полный кадр. Круги и ромб добавлены поверх снимка как пояснение. [Карточка NASA](https://science.nasa.gov/asset/hubble/the-gravitational-lens-g2237-0305/).
@@ -53,3 +53,15 @@ python -m http.server 8000 --bind 127.0.0.1
 Файл `assets/twin-galaxies.webp` создан с помощью ImageGen. Изображение иллюстрирует идею проекта.
 
 > Create a landscape 3:2 photographic deep-space hero background for a Russian educational website about a cosmic double. Two separate remarkably similar spiral galaxies, mirrored roughly at (19%, 43%) and (81%, 57%), both clear and legible as face-on spirals, large enough to occupy about one third of the frame each. Their soft luminous blue-white cores and dusty pale periwinkle and muted violet spiral arms stand out against near-black ink-navy space. The entire central 35% of the frame must be relatively dark and quiet for large centered white title placed by the website, with only tiny stars there. A fine sparse starfield, restrained contrast, extremely realistic telescope photography with spiral structure, no giant planets or lens flares, no purple clouds obscuring the structure. No text, no letters, no typography, no borders or logos. Aim for a timeless astronomy editorial, with balance and clean negative space.
+
+## Художественная визуализация Солнца и Андромеды
+
+`assets/solar-journey.webp` и `assets/andromeda-art.webp` созданы с помощью ImageGen. В схеме путешествия света масштаб условный. Художественный кадр Андромеды сопровождается отдельной мозаикой «Хаббла».
+
+### Солнце и Земля
+
+> Create a landscape 3:2 astronomical illustration for a Russian high-school site explaining the journey of sunlight from the Sun to Earth. A single huge, intensely textured Sun on the left, disk centered approximately at (23%, 48%) and diameter about 36% of frame width, fully inside the frame including its glowing outer corona. Archaeologically realistic natural orange and golden plasma granulation and a thin detailed corona, striking restrained small prominences around the edge. A single smaller recognizable Earth on the right at approximately (82%, 49%), roughly 10% of frame width, predominantly dark night side, cool blue-white illuminated crescent facing the Sun on Earth's LEFT side and a subtle recognizable cloud pattern. Both bodies at nearly the same vertical center. Leave a wide quiet near-black ink-blue gap between the right limb of the Sun and the left limb of the Earth; the site will animate a small light signal across that gap. Keep the area near the bottom relatively subdued for HTML labels. A few tiny sparse stars in the background, polished editorial astronomy illustration with convincing photographic texture and balanced contrast. Deep navy palette, warm golden sun and cool blue Earth, elegant and educational. Show no rays joining the two, no text, no labels, no logos, no numbers, no arrows, no foreground satellites, no extra planets, no diagram or frame.
+
+### Андромеда
+
+> Create a landscape 3:2 cinematic astronomical illustration of the Andromeda galaxy, a luminous single inclined spiral seen from a distance, for a polished educational website. Place the brightest galactic nucleus at the center (50%, 52%). The elongated oval disk tilts diagonally from lower left to upper right by about 17 degrees, with the overall appearance of a realistic highly inclined grand-design spiral and most of its disk inside the frame. Its gold-white central bulge transitions into delicate rich violet-blue star fields and dark brown dust lanes crossing the near side of the disk; fine authentic cosmic structure, restrained bright clusters, deep navy almost-black background. Show a convincing sense of depth and a dramatic glow with soft light falloff, as an artistic approximation of a telescope view of M31, not a chart. Keep the nearest edges mostly dark, with galaxy filling the central 80% width. One galaxy only, no foreground planets, no text, borders, watermarks, giant diffuse pink clouds, artificial flares or neon effects.
