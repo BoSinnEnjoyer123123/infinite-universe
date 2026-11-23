@@ -1,0 +1,357 @@
+.diagram-art {
+  --diagram-blue: #96c4ff;
+  --diagram-lilac: #c0a0ff;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.65;
+  isolation: isolate;
+}
+
+.diagram-horizon {
+  background:
+    radial-gradient(ellipse at center, #253e652e, transparent 74%),
+    radial-gradient(circle at center, #8aa3d422 1px, transparent 1.4px) 50% 50% / 24px 24px;
+}
+
+.diagram-horizon-stars i,
+.diagram-tree-dot {
+  position: absolute;
+  inset: var(--y) auto auto var(--x);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.diagram-horizon-stars i {
+  width: 3px;
+  aspect-ratio: 1;
+  background: #a5bde7b3;
+}
+
+.diagram-horizon-stars i:nth-child(3n + 1) {
+  width: 5px;
+  background: var(--diagram-blue);
+  box-shadow: 0 0 10px #96c4ff8c;
+}
+
+.diagram-horizon-stars i:nth-child(5n) {
+  background: var(--diagram-lilac);
+}
+
+.diagram-horizon-boundary {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 45%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px dashed var(--diagram-blue);
+  border-radius: 50%;
+  background: radial-gradient(circle, #5f9cfb12, #5f9cfb23);
+  box-shadow: 0 0 30px #83a9f628, inset 0 0 24px #658fec13;
+}
+
+.diagram-horizon-crosshair {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 57%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent, #b0cfff52 50%, transparent) center / 100% 1px no-repeat,
+    linear-gradient(0deg, transparent, #b0cfff52 50%, transparent) center / 1px 100% no-repeat;
+}
+
+.diagram-horizon-observer {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 9px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #f0f6ff;
+  box-shadow: 0 0 0 5px #96c4ff26, 0 0 0 12px #96c4ff13, 0 0 24px #96c4ffbe;
+}
+
+.diagram-patterns,
+.diagram-timelines {
+  display: grid;
+  align-items: center;
+  padding-inline: 7%;
+  box-sizing: border-box;
+}
+
+.diagram-patterns-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.4rem, 2vw, 0.9rem);
+}
+
+.diagram-pattern-tile {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 1px solid #6d8ab04d;
+  border-radius: 0.5rem;
+  background: linear-gradient(160deg, #202f48, #151e31);
+  box-shadow: 0 6px 20px #060a1563;
+}
+
+.diagram-pattern-diamond {
+  border-color: #c0a0ff9c;
+  background: linear-gradient(160deg, #32284a, #201e38);
+  box-shadow: 0 7px 22px #a17aff26;
+}
+
+.diagram-pattern-glyph {
+  display: grid;
+  width: 61%;
+  aspect-ratio: 1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10%;
+}
+
+.diagram-pattern-glyph i {
+  border-radius: 2px;
+  background: #96c4ff19;
+}
+
+.diagram-pattern-diamond i:nth-child(2n),
+.diagram-pattern-corners i:is(:nth-child(1), :nth-child(3), :nth-child(7), :nth-child(9)),
+.diagram-pattern-stair i:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5), :nth-child(7)) {
+  background: var(--diagram-blue);
+  box-shadow: 0 0 9px #96c4ff35;
+}
+
+.diagram-pattern-diamond i:nth-child(2n) {
+  background: var(--diagram-lilac);
+  box-shadow: 0 0 9px #c0a0ff42;
+}
+
+.diagram-patterns-connector {
+  position: absolute;
+  inset: 96% 11% auto;
+  height: clamp(0.8rem, 4vw, 1.65rem);
+  border: 1px solid #c0a0ff80;
+  border-top: 0;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.diagram-tree {
+  --branch-ink: #96c4ffdf;
+  --branch-size: 2px;
+  --branch-join: calc(50% - 1px);
+  background: linear-gradient(90deg, #96c4ff12 1px, transparent 1px) 7% center / 21% 100%;
+}
+
+.diagram-tree-link {
+  position: absolute;
+  inset: var(--y) auto auto var(--x);
+  width: var(--width);
+  height: var(--height, 0);
+}
+
+.diagram-tree-lilac {
+  --branch-ink: #c0a0ffdc;
+}
+
+.diagram-tree-stem {
+  border-top: var(--branch-size) solid var(--branch-ink);
+}
+
+.diagram-tree-fall {
+  top: calc(var(--y) - var(--height));
+}
+
+.diagram-tree-rise::before,
+.diagram-tree-rise::after,
+.diagram-tree-fall::before,
+.diagram-tree-fall::after {
+  position: absolute;
+  width: calc(50% + 1px);
+  height: calc(50% + 1px);
+  box-sizing: border-box;
+  content: "";
+}
+
+.diagram-tree-rise::before {
+  inset: auto auto 0 0;
+  border: solid var(--branch-ink);
+  border-width: 0 var(--branch-size) var(--branch-size) 0;
+  border-radius: 0 0 0.65rem 0;
+}
+
+.diagram-tree-rise::after {
+  inset: 0 auto auto var(--branch-join);
+  border: solid var(--branch-ink);
+  border-width: var(--branch-size) 0 0 var(--branch-size);
+  border-radius: 0.65rem 0 0;
+}
+
+.diagram-tree-fall::before {
+  inset: 0 auto auto 0;
+  border: solid var(--branch-ink);
+  border-width: var(--branch-size) var(--branch-size) 0 0;
+  border-radius: 0 0.65rem 0 0;
+}
+
+.diagram-tree-fall::after {
+  inset: auto auto 0 var(--branch-join);
+  border: solid var(--branch-ink);
+  border-width: 0 0 var(--branch-size) var(--branch-size);
+  border-radius: 0 0 0 0.65rem;
+}
+
+.diagram-tree-dot {
+  width: 6px;
+  aspect-ratio: 1;
+  background: var(--branch-ink);
+  box-shadow: 0 0 0 3px #96c4ff20;
+}
+
+.diagram-tree-origin,
+.diagram-tree-tip {
+  width: 8px;
+  box-shadow: 0 0 0 3px #96c4ff19, 0 0 12px var(--branch-ink);
+}
+
+.diagram-timelines {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13%;
+}
+
+.diagram-timeline-person {
+  --timeline-ink: var(--diagram-blue);
+  --timeline-fill: #263f61;
+  display: grid;
+  justify-items: center;
+  gap: clamp(0.9rem, 3vw, 1.9rem);
+}
+
+.diagram-timeline-alternate {
+  --timeline-ink: var(--diagram-lilac);
+  --timeline-fill: #49355d;
+}
+
+.diagram-timeline-portrait {
+  position: relative;
+  overflow: hidden;
+  width: 76%;
+  max-width: 10rem;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--timeline-ink) 60%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 43%, var(--timeline-fill), #121827 70%);
+  box-shadow: 0 0 27px color-mix(in srgb, var(--timeline-ink) 18%, transparent);
+}
+
+.diagram-timeline-silhouette i {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--timeline-ink);
+}
+
+.diagram-timeline-silhouette i:nth-child(1) {
+  z-index: 1;
+  top: 19%;
+  width: 30%;
+  height: 37%;
+  border-radius: 46% 46% 42% 42%;
+}
+
+.diagram-timeline-silhouette i:nth-child(2) {
+  top: 45%;
+  width: 16%;
+  height: 20%;
+}
+
+.diagram-timeline-silhouette i:nth-child(3) {
+  top: 58%;
+  width: 67%;
+  height: 44%;
+  border-radius: 48% 48% 2% 2% / 49% 49% 2% 2%;
+  background: linear-gradient(var(--timeline-ink), var(--timeline-fill));
+}
+
+.diagram-timeline-track {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid color-mix(in srgb, var(--timeline-ink) 65%, transparent);
+}
+
+.diagram-timeline-alternate .diagram-timeline-track {
+  border-top-style: dashed;
+}
+
+.diagram-timeline-track i {
+  position: absolute;
+  inset: 0 auto auto var(--x);
+  width: 5px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -60%);
+  border-radius: 50%;
+  background: var(--timeline-ink);
+  box-shadow: 0 0 8px var(--timeline-ink);
+}
+
+.diagram-timeline-alternate .diagram-timeline-track i {
+  transform: translate(-50%, -60%) rotate(45deg);
+  border-radius: 1px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scene-active .diagram-horizon-boundary {
+    animation: diagram-expand 1.45s ease-out both;
+  }
+
+  .scene-active .diagram-pattern-tile {
+    animation: diagram-rise 0.52s ease-out calc(var(--index) * 0.2s) both;
+  }
+
+  .scene-active .diagram-patterns-connector {
+    animation: diagram-fade 0.5s ease-out 0.95s both;
+  }
+
+  .scene-active .diagram-tree-link {
+    animation: diagram-draw 0.5s ease-out calc(var(--index) * 0.34s) both;
+  }
+
+  .scene-active .diagram-tree-dot {
+    animation: diagram-fade 0.42s ease-out calc(var(--index) * 0.34s) both;
+  }
+
+  .scene-active .diagram-timeline-portrait {
+    animation: diagram-rise 0.85s ease-out both;
+  }
+
+  .scene-active .diagram-timeline-track {
+    animation: diagram-draw 0.9s ease-out 0.5s both;
+  }
+}
+
+@keyframes diagram-expand {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+
+@keyframes diagram-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes diagram-fade {
+  from { opacity: 0; }
+}
+
+@keyframes diagram-draw {
+  from { clip-path: inset(-16px 100% -16px -16px); }
+  to { clip-path: inset(-16px -16px -16px -16px); }
+}

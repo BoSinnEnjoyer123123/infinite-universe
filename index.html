@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Учебный проект о границах наблюдаемой Вселенной, повторении узоров и гипотезе космического двойника.">
+    <title>Бесконечная Вселенная</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./assets/diagrams.css">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__art" data-scene aria-hidden="true">
+          <img src="./assets/twin-galaxies.webp" width="1536" height="1024" alt="" fetchpriority="high">
+        </div>
+        <div class="hero__copy wrap">
+          <p class="hero__context">Учебный проект по космологии</p>
+          <h1 id="hero-title">Бесконечная<br>Вселенная</h1>
+          <p class="hero__question">Если Вселенная бесконечна, может ли у вас быть космический двойник?</p>
+        </div>
+      </section>
+
+      <section class="chapter" aria-labelledby="horizon-title">
+        <div class="chapter__inner wrap">
+          <div class="chapter__copy">
+            <h2 id="horizon-title">Как далеко<br class="wide-break"> мы видим</h2>
+            <p>Свету нужно время, чтобы добраться до Земли. Поэтому мы видим далёкие галактики такими, какими они были в прошлом. Наблюдаемая Вселенная охватывает область, откуда свет уже успел до нас дойти. Как далеко простирается вся Вселенная, пока неизвестно.</p>
+          </div>
+          <figure class="figure">
+            <div class="figure__art" data-scene role="img" aria-label="Круг ограничивает область вокруг наблюдателя. Звёзды показаны внутри и снаружи круга.">
+              <div class="diagram-art diagram-horizon" aria-hidden="true">
+                <div class="diagram-horizon-stars">
+                  <i style="--x: 9%; --y: 16%"></i>
+                  <i style="--x: 16%; --y: 42%"></i>
+                  <i style="--x: 18%; --y: 75%"></i>
+                  <i style="--x: 24%; --y: 30%"></i>
+                  <i style="--x: 29%; --y: 89%"></i>
+                  <i style="--x: 32%; --y: 13%"></i>
+                  <i style="--x: 37%; --y: 35%"></i>
+                  <i style="--x: 39%; --y: 68%"></i>
+                  <i style="--x: 47%; --y: 24%"></i>
+                  <i style="--x: 54%; --y: 75%"></i>
+                  <i style="--x: 61%; --y: 62%"></i>
+                  <i style="--x: 64%; --y: 27%"></i>
+                  <i style="--x: 69%; --y: 86%"></i>
+                  <i style="--x: 75%; --y: 42%"></i>
+                  <i style="--x: 81%; --y: 71%"></i>
+                  <i style="--x: 85%; --y: 18%"></i>
+                  <i style="--x: 92%; --y: 49%"></i>
+                </div>
+                <div class="diagram-horizon-boundary"></div>
+                <div class="diagram-horizon-crosshair"></div>
+                <div class="diagram-horizon-observer"></div>
+              </div>
+            </div>
+            <figcaption>Условная схема границы наблюдения</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter chapter--reverse" aria-labelledby="patterns-title">
+        <div class="chapter__inner wrap">
+          <div class="chapter__copy">
+            <h2 id="patterns-title">Почему узоры повторяются</h2>
+            <p>Возьмём три разных узора и заполним ими четыре ячейки. Хотя бы один узор появится дважды. Какой именно, зависит от заполнения. Чтобы ожидать повторения конкретного состояния в космосе, нужно знать, какие состояния возможны и как они распределены.</p>
+          </div>
+          <figure class="figure">
+            <div class="figure__art" data-scene role="img" aria-label="В четырёх ячейках три разных узора. Первая и четвёртая ячейки совпадают.">
+              <div class="diagram-art diagram-patterns" aria-hidden="true">
+                <div class="diagram-patterns-grid">
+                  <div class="diagram-pattern-tile diagram-pattern-diamond" style="--index: 0">
+                    <div class="diagram-pattern-glyph"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="diagram-pattern-tile diagram-pattern-corners" style="--index: 1">
+                    <div class="diagram-pattern-glyph"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="diagram-pattern-tile diagram-pattern-stair" style="--index: 2">
+                    <div class="diagram-pattern-glyph"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="diagram-pattern-tile diagram-pattern-diamond" style="--index: 3">
+                    <div class="diagram-pattern-glyph"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="diagram-patterns-connector"></div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Один и тот же узор в первой и четвёртой ячейках</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter" aria-labelledby="branches-title">
+        <div class="chapter__inner wrap">
+          <div class="chapter__copy">
+            <h2 id="branches-title">Что такое квантовые ветви</h2>
+            <p>В многомировой интерпретации Хью Эверетта разные исходы квантового события описываются как разные ветви. В этой картине двойник был бы возможной версией человека в другой ветви. В модели космических повторов двойник находился бы далеко от нас в том же пространстве.</p>
+          </div>
+          <figure class="figure">
+            <div class="figure__art" data-scene role="img" aria-label="Из одной точки расходятся линии, которые заканчиваются пятью отдельными ветвями.">
+              <div class="diagram-art diagram-tree" aria-hidden="true">
+                <span class="diagram-tree-link diagram-tree-stem" style="--x: 10%; --y: 50%; --width: 18%; --index: 0"></span>
+                <span class="diagram-tree-link diagram-tree-rise" style="--x: 28%; --y: 27%; --width: 27%; --height: 23%; --index: 1"></span>
+                <span class="diagram-tree-link diagram-tree-fall diagram-tree-lilac" style="--x: 28%; --y: 72%; --width: 27%; --height: 22%; --index: 1"></span>
+                <span class="diagram-tree-link diagram-tree-rise" style="--x: 55%; --y: 14%; --width: 33%; --height: 13%; --index: 2"></span>
+                <span class="diagram-tree-link diagram-tree-fall" style="--x: 55%; --y: 37%; --width: 33%; --height: 10%; --index: 2"></span>
+                <span class="diagram-tree-link diagram-tree-rise diagram-tree-lilac" style="--x: 55%; --y: 55%; --width: 33%; --height: 17%; --index: 2"></span>
+                <span class="diagram-tree-link diagram-tree-stem diagram-tree-lilac" style="--x: 55%; --y: 72%; --width: 33%; --index: 2"></span>
+                <span class="diagram-tree-link diagram-tree-fall diagram-tree-lilac" style="--x: 55%; --y: 88%; --width: 33%; --height: 16%; --index: 2"></span>
+                <i class="diagram-tree-dot diagram-tree-origin" style="--x: 10%; --y: 50%; --index: 0"></i>
+                <i class="diagram-tree-dot" style="--x: 28%; --y: 50%; --index: 1"></i>
+                <i class="diagram-tree-dot" style="--x: 55%; --y: 27%; --index: 2"></i>
+                <i class="diagram-tree-dot diagram-tree-lilac" style="--x: 55%; --y: 72%; --index: 2"></i>
+                <i class="diagram-tree-dot diagram-tree-tip" style="--x: 88%; --y: 14%; --index: 3"></i>
+                <i class="diagram-tree-dot diagram-tree-tip" style="--x: 88%; --y: 37%; --index: 3"></i>
+                <i class="diagram-tree-dot diagram-tree-tip diagram-tree-lilac" style="--x: 88%; --y: 55%; --index: 3"></i>
+                <i class="diagram-tree-dot diagram-tree-tip diagram-tree-lilac" style="--x: 88%; --y: 72%; --index: 3"></i>
+                <i class="diagram-tree-dot diagram-tree-tip diagram-tree-lilac" style="--x: 88%; --y: 88%; --index: 3"></i>
+              </div>
+            </div>
+            <figcaption>Схема многомировой интерпретации</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter chapter--reverse chapter--last" aria-labelledby="copies-title">
+        <div class="chapter__inner wrap">
+          <div class="chapter__copy">
+            <h2 id="copies-title">Что значит «точная копия»</h2>
+            <p>Двое могут выглядеть одинаково. Совпадение физического состояния потребовало бы совпадения и в деталях, которые мы не видим. Даже сходство в один момент оставляет открытым вопрос, совпадали ли их истории.</p>
+          </div>
+          <figure class="figure">
+            <div class="figure__art" data-scene role="img" aria-label="Два одинаковых силуэта с различающимися отметками на линиях времени.">
+              <div class="diagram-art diagram-timelines" aria-hidden="true">
+                <div class="diagram-timeline-person">
+                  <div class="diagram-timeline-portrait">
+                    <div class="diagram-timeline-silhouette"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="diagram-timeline-track">
+                    <i style="--x: 11%"></i><i style="--x: 40%"></i><i style="--x: 56%"></i><i style="--x: 86%"></i>
+                  </div>
+                </div>
+                <div class="diagram-timeline-person diagram-timeline-alternate">
+                  <div class="diagram-timeline-portrait">
+                    <div class="diagram-timeline-silhouette"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="diagram-timeline-track">
+                    <i style="--x: 19%"></i><i style="--x: 35%"></i><i style="--x: 65%"></i><i style="--x: 78%"></i><i style="--x: 90%"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Похожий внешний вид и разные истории</figcaption>
+          </figure>
+          <p class="conclusion">В некоторых моделях космические двойники возможны. Остаётся открытым вопрос, выполняются ли условия этих моделей в реальной Вселенной.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sources" aria-labelledby="sources-title">
+      <div class="sources__inner wrap">
+        <h2 id="sources-title">Источники</h2>
+        <ul>
+          <li>Макс Тегмарк. <cite lang="en">Parallel Universes</cite>, 2003.</li>
+          <li>Тамара Дэвис и Чарльз Лайнуивер. <cite lang="en">Expanding Confusion</cite>, 2004.</li>
+          <li>Хью Эверетт. <cite lang="en">“Relative State” Formulation of Quantum Mechanics</cite>, 1957.</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
