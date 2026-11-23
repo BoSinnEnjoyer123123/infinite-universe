@@ -44,13 +44,15 @@ figure {
   overflow: hidden;
 }
 
-.hero__art {
+.hero__art,
+.finale__art {
   position: absolute;
   z-index: -1;
   inset: 0;
 }
 
-.hero__art img {
+.hero__art img,
+.finale__art img {
   display: block;
   width: 100%;
   height: 100%;
@@ -63,8 +65,19 @@ figure {
   inset: 0;
   background:
     linear-gradient(0deg, var(--background), transparent 33%, transparent 84%, #090d1966),
-    radial-gradient(ellipse at center, #080c1a9e 6%, #080c1a50 33%, transparent 66%);
+    radial-gradient(ellipse at center, #080c1ac2 9%, #080c1a72 36%, transparent 70%);
   content: "";
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #090d19 21%, #090d19e6 30%, transparent 51%);
+  opacity: 0;
+}
+
+.hero__veil--right {
+  transform: scaleX(-1);
 }
 
 .hero__copy {
@@ -90,11 +103,19 @@ figure {
 }
 
 .hero__question {
-  max-width: 36ch;
+  max-width: 49ch;
   margin-inline: auto;
   color: #d8e2f8;
-  font-size: clamp(1.13rem, 2vw, 1.45rem);
-  line-height: 1.5;
+  font-size: clamp(1.06rem, 1.6vw, 1.29rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.hero__lead-in {
+  max-width: 55ch;
+  margin: 1.1rem auto 0;
+  color: var(--caption);
+  font-size: 1rem;
   text-wrap: balance;
 }
 
@@ -102,7 +123,8 @@ figure {
   display: grid;
   grid-template-areas: "copy figure";
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2.5rem, 7vw, 6.5rem);
+  column-gap: clamp(2.5rem, 7vw, 6.5rem);
+  row-gap: clamp(1.9rem, 4vw, 3.75rem);
   align-items: center;
   padding-block: clamp(3.75rem, 8vw, 7rem);
   border-top: 1px solid var(--line);
@@ -113,16 +135,42 @@ figure {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 }
 
-.chapter--last .chapter__inner {
-  grid-template-areas: "figure copy" "conclusion conclusion";
-  row-gap: clamp(3.5rem, 7vw, 6rem);
+.chapter--light .chapter__inner {
+  grid-template-areas: "copy figure" "panorama panorama";
+}
+
+.chapter--sequence {
+  background: linear-gradient(180deg, transparent, #111831 60%, transparent);
+}
+
+.chapter--sequence .chapter__inner {
+  grid-template-areas: "copy" "figure";
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+.chapter--sequence .figure {
+  width: min(100%, 42rem);
+}
+
+.chapter--comparison .chapter__inner {
+  grid-template-areas: "copy" "comparison" "question";
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.chapter__comparison {
+  display: grid;
+  grid-area: comparison;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
 }
 
 .chapter__copy {
   grid-area: copy;
 }
 
-.chapter h2 {
+.chapter h2,
+.finale h2 {
   font-family: var(--serif);
   font-size: clamp(2.65rem, 4.5vw, 4.5rem);
   font-weight: 400;
@@ -131,12 +179,54 @@ figure {
   text-wrap: balance;
 }
 
-.chapter__copy p {
+.chapter__copy p,
+.chapter__question {
   max-width: 49ch;
-  margin-top: 1.4rem;
+  margin-top: 0.9rem;
   color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.72;
+}
+
+.chapter__copy h2 + p {
+  margin-top: 1.35rem;
+}
+
+.chapter__question {
+  grid-area: question;
+  color: #cfdbfa;
+}
+
+.chapter__copy .chapter__question {
+  padding-left: 0.86rem;
+  border-left: 1px solid #9183c8;
+  color: #cfdbfa;
+}
+
+.chapter--sequence .chapter__copy,
+.chapter--comparison .chapter__copy {
+  width: min(100%, 49rem);
+}
+
+.chapter--sequence h2,
+.chapter--comparison h2 {
+  text-wrap: wrap;
+}
+
+.chapter--sequence .chapter__copy p,
+.chapter--comparison .chapter__copy p,
+.chapter--comparison .chapter__question {
+  max-width: 66ch;
+}
+
+.chapter--comparison .chapter__question {
+  margin-top: 0;
+}
+
+.sequence-inline {
+  color: #ebdfff;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .figure {
@@ -160,19 +250,131 @@ figure {
   font-size: 0.9rem;
 }
 
-.conclusion {
-  grid-area: conclusion;
-  justify-self: center;
-  max-width: 37ch;
-  padding-top: clamp(2.2rem, 4vw, 3.5rem);
-  border-top: 1px solid #516384;
-  color: #dae4fa;
-  font-family: var(--serif);
-  font-size: clamp(1.6rem, 3.1vw, 2.8rem);
-  letter-spacing: -0.024em;
-  line-height: 1.32;
+.chapter__comparison .figure {
+  grid-area: auto;
+}
+
+.figure__art--strip {
+  aspect-ratio: 2.65;
+}
+
+.figure__art--strip > .diagram-art {
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+
+.figure--panorama {
+  grid-area: panorama;
+}
+
+.figure--panorama img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #2b3853;
+  border-radius: 0.75rem;
+  background: #090b12;
+}
+
+.figure__credit {
+  display: block;
+  margin-top: 0.22rem;
+  color: #95a6c5;
+  font-size: 0.81rem;
+  overflow-wrap: anywhere;
+}
+
+.figure__mobile-note {
+  display: none;
+}
+
+.diagram-horizon-tag,
+.diagram-tree-label,
+.diagram-timeline-label {
+  color: #dbe5fa;
+  font-size: clamp(0.72rem, 1.6vw, 0.89rem);
+  line-height: 1.25;
   text-align: center;
+}
+
+.diagram-horizon-tag,
+.diagram-tree-label {
+  position: absolute;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid #5261847a;
+  border-radius: 0.35rem;
+  background-color: #141c30;
+}
+
+.diagram-horizon-tag--inside {
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.diagram-horizon-tag--outside {
+  top: 11%;
+  right: 4%;
+  max-width: 13ch;
   text-wrap: balance;
+}
+
+.diagram-tree-label {
+  right: 4%;
+}
+
+.diagram-tree-label--upper {
+  top: 10%;
+}
+
+.diagram-tree-label--lower {
+  bottom: 10%;
+}
+
+.diagram-timeline-person .diagram-timeline-label {
+  min-height: 2.5em;
+  margin-top: -0.25rem;
+  text-wrap: balance;
+}
+
+.finale {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: min(43rem, 80svh);
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
+
+.finale__art::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, var(--background), transparent 28%, transparent 74%, var(--background)),
+    radial-gradient(ellipse at center, #090d19 8%, #090d19da 31%, #090d1954 76%);
+  content: "";
+}
+
+.finale__copy {
+  text-align: center;
+}
+
+.finale__answer {
+  max-width: 45ch;
+  margin: 1.65rem auto 0;
+  color: #e2ebff;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  text-wrap: balance;
+}
+
+.finale__summary {
+  max-width: 56ch;
+  margin: 1.3rem auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
 }
 
 .sources__inner {
@@ -244,11 +446,21 @@ figure {
     padding-block: 3.25rem;
   }
 
-  .chapter--last .chapter__inner {
-    grid-template-areas: "copy" "figure" "conclusion";
+  .chapter--light .chapter__inner {
+    grid-template-areas: "copy" "figure" "panorama";
   }
 
-  .chapter h2 {
+  .chapter--comparison .chapter__inner {
+    grid-template-areas: "copy" "comparison" "question";
+  }
+
+  .chapter__comparison {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .chapter h2,
+  .finale h2 {
     font-size: clamp(2.45rem, 8vw, 3.55rem);
   }
 
@@ -256,12 +468,27 @@ figure {
     margin-top: 0.95rem;
   }
 
-  .wide-break {
-    display: none;
+  .figure__mobile-note {
+    display: inline;
   }
 
-  .conclusion {
-    margin-top: 0.6rem;
+  .diagram-horizon-tag--outside {
+    right: 2.5%;
+  }
+
+  .finale {
+    min-height: auto;
+  }
+
+  .finale__art img {
+    object-fit: contain;
+    object-position: center 88%;
+  }
+
+  .finale__art::after {
+    background:
+      linear-gradient(0deg, var(--background), transparent 19%, #090d19b8 74%, var(--background)),
+      radial-gradient(ellipse at center, #090d19de 25%, transparent 90%);
   }
 
   .sources__inner {
@@ -270,19 +497,37 @@ figure {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero__art.scene-active img {
-    animation: reveal-galaxies 1.65s ease-out both;
+  .hero__art.scene-active .hero__veil {
+    animation: reveal-galaxies 1.4s ease-out both;
+  }
+
+  .hero__art.scene-active .hero__veil--right {
+    animation-delay: 0.45s;
+  }
+
+  .finale__art.scene-active img {
+    animation: reveal-finale 1.8s ease-out both;
   }
 }
 
 @keyframes reveal-galaxies {
   from {
-    opacity: 0.22;
-    transform: scale(1.035);
+    opacity: 0.96;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal-finale {
+  from {
+    opacity: 0.32;
+    transform: scale(1.045);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
   }
 }
