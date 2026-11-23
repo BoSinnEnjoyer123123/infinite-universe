@@ -1,0 +1,148 @@
+.addition-photo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--line, #263148);
+  border-radius: 0.9rem;
+  background: var(--surface, #101626);
+}
+
+.addition-photo picture,
+.addition-photo img {
+  display: block;
+}
+
+.addition-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.addition-photo__mark {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 5.3%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid #d5ebff;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #000, inset 0 0 2px #000;
+  pointer-events: none;
+}
+
+.addition-photo__mark--center {
+  width: 3.6%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-color: #ffd69b;
+  border-radius: 2px;
+}
+
+.addition-photo--cup::after,
+.addition-photo--rings::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 47%, #090d19 56%);
+  opacity: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.addition-photo--deja::before,
+.addition-photo--deja::after {
+  position: absolute;
+  top: 62%;
+  left: 16.5%;
+  width: 25.5%;
+  height: 14%;
+  border: 1px solid #e1eaff;
+  border-radius: 0.45rem;
+  box-shadow: 0 0 0.65rem #abd4ff7d;
+  opacity: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.addition-photo--deja::after {
+  left: 66.5%;
+  border-color: #ecddff;
+  box-shadow: 0 0 0.65rem #c0a0ff7d;
+}
+
+.addition-ring-histories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.addition-ring-histories > span {
+  color: var(--caption, #a5b2cc);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.addition-ring-histories > span::after {
+  display: block;
+  margin-top: 0.45rem;
+  border-top: 1px solid #8ecaff;
+  content: "";
+}
+
+.addition-ring-histories > span + span::after {
+  border-top: 1px dashed #c0a0ff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .addition-photo--cross.scene-active .addition-photo__mark {
+    animation: addition-mark-appear 0.75s ease-out both;
+    animation-delay: calc(0.16s + var(--order, 0) * 0.19s);
+  }
+
+  .addition-photo--cup.scene-active::after,
+  .addition-photo--rings.scene-active::after {
+    animation: addition-photo-reveal 1.6s 0.12s ease-out both;
+  }
+
+  .addition-photo--deja.scene-active::before,
+  .addition-photo--deja.scene-active::after {
+    animation: addition-room-outline 1.8s ease-in-out both;
+  }
+
+  .addition-photo--deja.scene-active::after {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes addition-mark-appear {
+  from {
+    scale: 0.65;
+    opacity: 0;
+  }
+
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes addition-photo-reveal {
+  from {
+    opacity: 0.86;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes addition-room-outline {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  30%,
+  65% {
+    opacity: 1;
+  }
+}

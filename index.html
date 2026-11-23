@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./assets/diagrams.css">
     <link rel="stylesheet" href="./assets/v2-schemes.css">
+    <link rel="stylesheet" href="./assets/addition-layout.css">
+    <link rel="stylesheet" href="./assets/addition-diagrams.css">
+    <link rel="stylesheet" href="./assets/addition-photos.css">
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -24,6 +27,66 @@
           <h1 id="hero-title">Бесконечная<br>Вселенная</h1>
           <p class="hero__question">Представьте, что в далёкой галактике кто-то читает ту же фразу. У этого человека ваше лицо, а на столе лежит такая же тетрадь, открытая на той же странице. Если Вселенная бесконечна, достаточно ли этого, чтобы где-то появился такой двойник?</p>
           <p class="hero__lead-in">Начнём с того, что мы можем проверить сами. Что показывает нам свет, который приходит из космоса?</p>
+        </div>
+      </section>
+
+      <section class="addition-chapter" aria-labelledby="relativity-title">
+        <div class="wrap addition-chapter__inner">
+          <p class="addition-chapter__number">Глава 1</p>
+          <h2 id="relativity-title">Общая теория относительности Эйнштейна</h2>
+          <div class="addition-chapter__rows">
+            <article class="addition-row">
+              <div class="addition-row__copy">
+                <h3>Как гравитация меняет путь света</h3>
+                <p>Что произойдёт со светом, если он пройдёт рядом с массивной галактикой? По общей теории относительности Альберта Эйнштейна пространство и время образуют единое пространство-время. Масса галактики меняет его геометрию. Это влияет на то, по каким траекториям движутся тела и свет.</p>
+                <p class="addition-question">На схеме лучи от далёкого источника проходят с разных сторон галактики и сходятся у наблюдателя. Что увидит телескоп, если до него дошёл свет от одного источника по нескольким путям?</p>
+              </div>
+              <figure class="addition-figure">
+                <div class="addition-diagram addition-lens" data-scene role="img" aria-label="Свет далёкого источника идёт двумя путями. Один проходит выше массивной галактики, другой ниже. Оба луча доходят до одного наблюдателя.">
+                  <div class="addition-lens__plot" aria-hidden="true">
+                    <div class="addition-lens__rays">
+                      <span class="addition-lens__ray"></span>
+                      <span class="addition-lens__ray addition-lens__ray--lower"></span>
+                    </div>
+                    <span class="addition-lens__source"></span>
+                    <span class="addition-lens__galaxy"></span>
+                    <span class="addition-lens__observer"></span>
+                  </div>
+                  <div class="addition-lens__labels" aria-hidden="true">
+                    <span>Далёкий источник</span>
+                    <span>Массивная галактика</span>
+                    <span>Наблюдатель</span>
+                  </div>
+                </div>
+                <figcaption>Два пути света от одного источника. Условная схема без масштаба.</figcaption>
+              </figure>
+            </article>
+            <article class="addition-row addition-row--alternate">
+              <div class="addition-row__copy">
+                <h3>Крест Эйнштейна</h3>
+                <p>Посмотрите на четыре яркие точки вокруг центра снимка. Сколько далёких объектов мы видим?</p>
+                <p>Четыре точки — изображения одного квазара, очень яркого ядра далёкой галактики. В центре снимка видна более близкая галактика. Её гравитация отклоняет свет квазара, словно линза. Когда свет достигает телескопа по разным путям, один далёкий объект виден сразу в нескольких местах снимка.</p>
+                <p class="addition-question">Свету нужно время, чтобы пройти этот путь. Что тогда мы видим, когда смотрим на Солнце или на другую галактику?</p>
+              </div>
+              <figure class="addition-figure">
+                <div class="addition-photo addition-photo--cross" data-scene>
+                  <picture>
+                    <source media="(max-width: 46rem)" srcset="./assets/einstein-cross-mobile.webp" width="640" height="593">
+                    <img src="./assets/einstein-cross-wide.webp" width="1200" height="1112" alt="Четыре ярких изображения одного далёкого квазара вокруг галактики на переднем плане." loading="lazy" decoding="async">
+                  </picture>
+                  <span class="addition-photo__mark" style="--x:47.69%; --y:37.97%; --order:0" aria-hidden="true"></span>
+                  <span class="addition-photo__mark" style="--x:58.08%; --y:46.76%; --order:1" aria-hidden="true"></span>
+                  <span class="addition-photo__mark" style="--x:48.75%; --y:56.47%; --order:2" aria-hidden="true"></span>
+                  <span class="addition-photo__mark" style="--x:42.43%; --y:48.73%; --order:3" aria-hidden="true"></span>
+                  <span class="addition-photo__mark addition-photo__mark--center" style="--x:50.65%; --y:47.20%; --order:4" aria-hidden="true"></span>
+                </div>
+                <figcaption>
+                  «Крест Эйнштейна» G2237+0305. Круги отмечают четыре изображения одного квазара, ромб — галактику на переднем плане.
+                  <span class="figure__credit">Снимок телескопа «Хаббл». NASA, ESA, STScI.</span>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -226,6 +289,14 @@
         </div>
       </section>
 
+      <section class="addition-chapter addition-chapter--quantum" aria-labelledby="quantum-title">
+        <div class="wrap addition-chapter__inner">
+          <p class="addition-chapter__number">Глава 2</p>
+          <h2 id="quantum-title">Многомировая интерпретация квантовой механики</h2>
+          <p class="addition-chapter__lead">До сих пор мы спрашивали, может ли какая-то история повториться далеко от нас. Теперь рассмотрим опыт, у которого есть несколько возможных исходов. Как их описать? Один из ответов предложил физик Хью Эверетт.</p>
+        </div>
+      </section>
+
       <section class="chapter chapter--comparison" aria-labelledby="compare-title">
         <div class="chapter__inner wrap">
           <div class="chapter__copy">
@@ -322,6 +393,88 @@
         </div>
       </section>
 
+      <section class="addition-matrix" aria-labelledby="matrix-title">
+        <div class="wrap addition-matrix__inner">
+          <div class="addition-matrix__intro">
+            <h2 id="matrix-title">Сбои в матрице</h2>
+            <p>Знакомый рисунок, похожее украшение, комната, в которой вы будто уже были. Что именно повторилось — внешний вид, обстановка или само событие?</p>
+          </div>
+
+          <div class="addition-matrix__grid">
+            <article class="addition-matrix__card">
+              <h3>Коллекционная кружка</h3>
+              <p>Представьте, что коллекционная кружка разбилась. Где-то могла бы существовать целая кружка с таким же рисунком. Здесь лежат осколки, там стоит похожая вещь. У каждой кружки своя история, даже если их рисунки совпадают.</p>
+              <figure class="addition-figure">
+                <div class="addition-photo addition-photo--cup" data-scene>
+                  <img src="./assets/matrix-cup.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Слева осколки синей кружки, справа похожая целая кружка с белой звездой.">
+                </div>
+                <figcaption>Вымышленный сюжет. Осколки одной кружки и похожая целая кружка в другом месте.</figcaption>
+              </figure>
+            </article>
+
+            <article class="addition-matrix__card">
+              <h3>Потерянное кольцо</h3>
+              <p>В другой истории герой теряет кольцо, а затем видит на столе два почти одинаковых. Как выяснить, принадлежало ли ему одно из них? Можно сравнить царапины и гравировку или узнать, откуда взялось каждое. Одного сходства мало, чтобы установить происхождение.</p>
+              <figure class="addition-figure">
+                <div class="addition-photo addition-photo--rings" data-scene>
+                  <img src="./assets/matrix-rings.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Два серебристых кольца с ромбовидной гравировкой лежат рядом.">
+                </div>
+                <div class="addition-ring-histories">
+                  <span>Кольцо слева</span>
+                  <span>Кольцо справа</span>
+                </div>
+                <figcaption>Вымышленный сюжет. Два кольца с похожим рисунком.</figcaption>
+              </figure>
+            </article>
+
+            <article class="addition-matrix__card">
+              <h3>Дежавю</h3>
+              <p>Дежавю — чувство, будто ситуация уже происходила, хотя вы понимаете, что она для вас новая. В одном эксперименте участники чаще сообщали о дежавю в новых виртуальных комнатах, похожих по планировке на показанные раньше. Чувство возникало, даже когда они не могли вспомнить прежнюю комнату.</p>
+              <figure class="addition-figure">
+                <div class="addition-photo addition-photo--deja" data-scene>
+                  <img src="./assets/matrix-deja-vu.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Два школьных кабинета с похожим расположением окон, парт и учительского стола.">
+                </div>
+                <figcaption>Иллюстрация. Две разные комнаты с похожей расстановкой предметов.</figcaption>
+              </figure>
+            </article>
+
+            <article class="addition-matrix__card">
+              <h3>Больцмановский мозг</h3>
+              <p>В некоторых моделях космоса обсуждают мысленный эксперимент. Мог бы наблюдатель возникнуть из редкой случайной флуктуации, то есть отклонения от обычного состояния? Такого гипотетического наблюдателя называют больцмановским мозгом. Учёные используют этот вопрос, чтобы проверить, к каким предсказаниям приводит модель.</p>
+              <figure class="addition-figure">
+                <div class="addition-diagram addition-fluctuation" data-scene role="img" aria-label="Две истории наблюдателей. Сверху долгий путь от звёзд и планет до жизни. Снизу случайная флуктуация и гипотетический наблюдатель. Нижняя история — мысленный эксперимент.">
+                  <div class="addition-fluctuation__row" aria-hidden="true">
+                    <span class="addition-fluctuation__title">Долгая эволюция</span>
+                    <div class="addition-fluctuation__path addition-fluctuation__path--history">
+                      <span class="addition-fluctuation__steps">Звёзды, планеты, жизнь</span>
+                      <span class="addition-fluctuation__track">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </div>
+                    <span class="addition-fluctuation__outcome">Наблюдатель</span>
+                  </div>
+                  <div class="addition-fluctuation__row addition-fluctuation__row--rare" aria-hidden="true">
+                    <span class="addition-fluctuation__title">Редкая флуктуация</span>
+                    <div class="addition-fluctuation__path addition-fluctuation__path--rare">
+                      <span class="addition-fluctuation__steps">Случайное событие</span>
+                      <span class="addition-fluctuation__track">
+                        <span class="addition-fluctuation__spark"></span>
+                      </span>
+                    </div>
+                    <span class="addition-fluctuation__outcome">Гипотетический наблюдатель</span>
+                  </div>
+                </div>
+                <figcaption>Мысленный эксперимент. Нижняя история иллюстрирует допущение некоторых космологических моделей.</figcaption>
+              </figure>
+            </article>
+          </div>
+
+          <p class="addition-matrix__transition">Похожий кадр оставляет открытым вопрос о том, что было до него. Вернёмся к человеку, который мог бы читать ту же фразу в далёкой галактике.</p>
+        </div>
+      </section>
+
       <section class="finale" aria-labelledby="finale-title">
         <div class="finale__art" data-scene aria-hidden="true">
           <img src="./assets/twin-galaxies.webp" width="1536" height="1024" alt="" loading="lazy" decoding="async">
@@ -343,6 +496,9 @@
           <li>Хью Эверетт. <cite lang="en">“Relative State” Formulation of Quantum Mechanics</cite>, 1957.</li>
           <li>NASA. Снимок Солнца, Solar Dynamics Observatory.</li>
           <li>NASA и ESA. Мозаика Андромеды, космический телескоп «Хаббл».</li>
+          <li>NASA, ESA, STScI. Снимок «Креста Эйнштейна» G2237+0305.</li>
+          <li>Энн Клири и соавторы. Эксперимент о дежавю и расположении объектов, 2012.</li>
+          <li>Андреа Де Симоне и соавторы. Исследование космологической модели и больцмановских мозгов, 2010.</li>
         </ul>
       </div>
     </footer>

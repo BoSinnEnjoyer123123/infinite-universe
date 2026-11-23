@@ -1,0 +1,255 @@
+.addition-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.addition-figure figcaption {
+  margin: 0.8rem 0.15rem 0;
+  color: #a5b2cc;
+  font-size: 0.9rem;
+}
+
+.addition-diagram {
+  --addition-blue: #96c4ff;
+  --addition-lilac: #c0a0ff;
+  --addition-label: #e0e8ff;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.65;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+  container-type: inline-size;
+  border: 1px solid #2b3853;
+  border-radius: 0.75rem;
+  background-color: #101626;
+}
+
+.addition-lens {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 2%;
+  padding-block: 5% 6%;
+  background:
+    radial-gradient(ellipse at 50% 45%, #594b752b, transparent 65%),
+    radial-gradient(circle, #b4c9ff2e 0.75px, transparent 1.15px) center / 22px 22px,
+    #101626;
+}
+
+.addition-lens__plot {
+  position: relative;
+  min-height: 0;
+}
+
+.addition-lens__plot::before {
+  position: absolute;
+  top: 50%;
+  inset-inline: 16% 16%;
+  border-top: 1px dashed #a3b6dc40;
+  content: "";
+}
+
+.addition-lens__rays,
+.addition-lens__ray {
+  position: absolute;
+  inset: 0;
+}
+
+.addition-lens__ray {
+  background-color: var(--addition-blue);
+  clip-path: polygon(
+    16% 49%, 21% 43%, 26% 36.5%, 31% 30.4%, 36% 25.1%, 41% 21.6%,
+    46% 19.4%, 50% 19%, 54% 19.6%, 59% 21.8%, 64% 25.8%, 69% 31%,
+    74% 37.1%, 79% 43.2%, 84% 49%,
+    84% 51%, 79% 45.2%, 74% 39.1%, 69% 33%, 64% 27.8%, 59% 23.8%,
+    54% 21.6%, 50% 21%, 46% 21.4%, 41% 23.6%, 36% 27.1%, 31% 32.4%,
+    26% 38.5%, 21% 45%, 16% 51%
+  );
+}
+
+.addition-lens__ray--lower {
+  transform: scaleY(-1);
+  background-color: var(--addition-lilac);
+}
+
+.addition-lens__source,
+.addition-lens__galaxy,
+.addition-lens__observer {
+  position: absolute;
+  top: 50%;
+  left: var(--addition-center);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.addition-lens__source {
+  --addition-center: 16%;
+  width: clamp(0.55rem, 2vw, 0.9rem);
+  background: #f4f8ff;
+  box-shadow: 0 0 0 0.3rem #96c4ff32, 0 0 1rem #96c4ffad;
+}
+
+.addition-lens__galaxy {
+  --addition-center: 50%;
+  width: 15%;
+  transform: translate(-50%, -50%) rotate(-24deg);
+  border: 1px solid #bda7eaa0;
+  background:
+    radial-gradient(ellipse at center, #fff1d6 2%, #cbaaee 12%, transparent 31%),
+    repeating-radial-gradient(ellipse at center, transparent 9% 16%, #d4bcec59 23%, transparent 31%),
+    radial-gradient(circle, #4f426d, #161e32 72%);
+  box-shadow: 0 0 1rem #c0a0ff73, 0 0 0 0.35rem #c0a0ff21;
+}
+
+.addition-lens__observer {
+  --addition-center: 84%;
+  width: clamp(0.7rem, 2.5vw, 1.05rem);
+  border: 2px solid #d7e5ff;
+  background: #253453;
+  box-shadow: 0 0 0 0.3rem #96c4ff29;
+}
+
+.addition-lens__observer::after {
+  position: absolute;
+  inset: 26%;
+  border-radius: 50%;
+  background: #d7e5ff;
+  content: "";
+}
+
+.addition-lens__labels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  justify-items: center;
+  color: var(--addition-label);
+  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 2.75cqw, 0.94rem);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.addition-lens__labels span {
+  max-width: 12ch;
+  padding-inline: 0.1rem;
+  text-wrap: balance;
+}
+
+.addition-fluctuation {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 5%;
+  padding: 5%;
+  background:
+    radial-gradient(ellipse at 0% 0%, #42618f28, transparent 66%),
+    radial-gradient(ellipse at 100% 100%, #7a5a9c30, transparent 65%),
+    #101626;
+}
+
+.addition-fluctuation__row {
+  --addition-route: var(--addition-blue);
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 36%);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas: "title outcome" "path outcome";
+  column-gap: 7%;
+  row-gap: 10%;
+  align-items: center;
+}
+
+.addition-fluctuation__row--rare {
+  --addition-route: var(--addition-lilac);
+  padding-top: 5%;
+  border-top: 1px solid #6e82af40;
+}
+
+.addition-fluctuation__title {
+  grid-area: title;
+  color: var(--addition-label);
+  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 2.75cqw, 0.94rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.addition-fluctuation__path {
+  display: grid;
+  grid-area: path;
+  min-width: 0;
+  gap: clamp(0.15rem, 1vw, 0.6rem);
+}
+
+.addition-fluctuation__steps {
+  color: #b8c7df;
+  font-size: 0.68rem;
+  font-size: clamp(0.68rem, 2.5cqw, 0.86rem);
+  line-height: 1.15;
+}
+
+.addition-fluctuation__track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 9px;
+  background: linear-gradient(var(--addition-route), var(--addition-route)) center / 100% 1px no-repeat;
+}
+
+.addition-fluctuation__path--rare .addition-fluctuation__track {
+  justify-content: flex-end;
+  background: repeating-linear-gradient(90deg, var(--addition-route) 0 4px, transparent 4px 9px) center / 100% 1px no-repeat;
+}
+
+.addition-fluctuation__track span {
+  width: clamp(0.4rem, 1.5vw, 0.62rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--addition-route);
+}
+
+.addition-fluctuation__track .addition-fluctuation__spark {
+  width: clamp(0.4rem, 1.55vw, 0.65rem);
+  margin-inline-end: 10%;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  box-shadow: 0 0 0 0.2rem #c0a0ff24, 0 0 0.7rem var(--addition-route);
+}
+
+.addition-fluctuation__outcome {
+  display: grid;
+  grid-area: outcome;
+  place-content: center;
+  height: 100%;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--addition-route) 42%, transparent);
+  border-radius: 0.45rem;
+  background-color: #161e31;
+  color: var(--addition-label);
+  font-size: 0.69rem;
+  font-size: clamp(0.69rem, 2.6cqw, 0.9rem);
+  line-height: 1.19;
+  text-align: center;
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scene-active .addition-lens__rays {
+    animation: addition-trace 1.7s ease-in-out both;
+  }
+
+  .scene-active .addition-fluctuation__path--history .addition-fluctuation__track {
+    animation: addition-trace 1.5s ease-out both;
+  }
+
+  .scene-active .addition-fluctuation__path--rare .addition-fluctuation__track {
+    animation: addition-trace 1.4s ease-out 0.22s both;
+  }
+}
+
+@keyframes addition-trace {
+  from { clip-path: inset(-20% 100% -20% -20%); }
+  to { clip-path: inset(-20% -20% -20% -20%); }
+}
