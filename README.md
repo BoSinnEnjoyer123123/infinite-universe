@@ -45,6 +45,10 @@ python -m http.server 8000 --bind 127.0.0.1
 
 Изображения кружек, колец и школьных кабинетов созданы инструментом ImageGen для иллюстрации сюжетов. Схема двух историй наблюдателя иллюстрирует мысленный эксперимент.
 
+Крупный план колец находится в `assets/matrix-ring-details.webp`. Контуры поверх изображения по очереди отмечают следы на металле.
+
+> Create a landscape 3:2 editorial photographic diptych for a Russian high-school presentation about comparing two similar rings. One silver band per panel, two total. Both have the same repeated diamond-shaped engraved motif and are made of the same brushed silver. Compose two equal side-by-side panels with a slim ink-navy seam at the center. Macro close-up of the front outer band and its curve, viewed at a slight oblique angle. The IMPORTANT comparison clues are on the illuminated metal near the center of each panel: on the LEFT ring, clearly show two short thin diagonal scratches crossing one of the diamonds in the foreground; on the RIGHT ring, show one clearly identifiable shallow round dent on the corresponding section of the band, with no matching double scratch there. Make these signs physically natural and large enough to find on a mobile-size image, roughly 6–10% of a panel across. Preserve clean space around both details for small CSS outline markers overlaid by the website. Warm silver specular texture and subdued cyan on the left, subdued lilac on the right, deep matte ink-navy shadows, elegant teaching illustration, sharply focused on the engraving. Show no text, arrows, numbers, symbols beyond the basic engraving, people, hands, gemstones, logos, watermarks, or extra jewelry.
+
 - [Эксперимент Энн Клири и соавторов о дежавю](https://doi.org/10.1016/j.concog.2011.12.010).
 - [Исследование космологической модели Андреа Де Симоне и соавторов](https://doi.org/10.1103/PhysRevD.82.063520).
 

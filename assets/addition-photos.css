@@ -37,8 +37,7 @@
   border-radius: 2px;
 }
 
-.addition-photo--cup::after,
-.addition-photo--rings::after {
+.addition-photo--cup::after {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, transparent 47%, #090d19 56%);
@@ -92,15 +91,32 @@
   border-top: 1px dashed #c0a0ff;
 }
 
+.addition-ring-detail {
+  width: var(--detail-width);
+  border-width: 1.5px;
+  border-color: #afe7ff;
+  box-shadow: 0 0 0.66rem #8ecaff84, inset 0 0 0.25rem #0008;
+}
+
+.addition-ring-detail--right {
+  border-style: dashed;
+  border-color: #e8ceff;
+  box-shadow: 0 0 0.66rem #c0a0ff87, inset 0 0 0.25rem #0008;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .addition-photo--cross.scene-active .addition-photo__mark {
     animation: addition-mark-appear 1s ease-out both;
     animation-delay: calc(0.2s + var(--order, 0) * 0.53s);
   }
 
-  .addition-photo--cup.scene-active::after,
-  .addition-photo--rings.scene-active::after {
+  .addition-photo--cup.scene-active::after {
     animation: addition-photo-reveal 2.5s 0.12s ease-out both;
+  }
+
+  .addition-photo--rings.scene-active .addition-ring-detail {
+    animation: addition-mark-appear 1.2s ease-out both;
+    animation-delay: calc(0.7s + var(--order, 0) * 1.05s);
   }
 
   .addition-photo--deja.scene-active::before,
