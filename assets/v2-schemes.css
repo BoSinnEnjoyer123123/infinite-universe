@@ -228,24 +228,24 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .scene-active .diagram-light__signal {
-    animation: diagram-light-travel 1.9s ease-in-out 0.2s both;
+    animation: diagram-light-travel 3.3s ease-in-out 0.2s both;
   }
 
   .andromeda-observation.scene-active img {
-    animation: diagram-andromeda-reveal 1.25s ease-out 0.18s both;
+    animation: diagram-andromeda-reveal 1.65s ease-out 0.18s both;
   }
 
   .scene-active .diagram-sequence__number:not(.diagram-sequence__number--first),
   .scene-active .diagram-coin__case {
-    animation: diagram-item-appear 0.48s ease-out var(--diagram-delay) both;
+    animation: diagram-item-appear 0.75s ease-out calc(var(--diagram-delay) * 2.25) both;
   }
 
   .scene-active .diagram-coin__mark {
-    animation: diagram-item-appear 0.4s ease-out 0.85s both;
+    animation: diagram-item-appear 0.7s ease-out 2.3s both;
   }
 
   .scene-active .diagram-space__region--distant {
-    animation: diagram-item-appear 0.9s ease-out 0.28s both;
+    animation: diagram-item-appear 1.7s ease-out 0.4s both;
   }
 }
 

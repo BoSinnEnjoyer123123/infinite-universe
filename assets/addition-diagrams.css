@@ -237,15 +237,15 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .scene-active .addition-lens__rays {
-    animation: addition-trace 1.7s ease-in-out both;
+    animation: addition-trace 3.2s ease-in-out both;
   }
 
   .scene-active .addition-fluctuation__path--history .addition-fluctuation__track {
-    animation: addition-trace 1.5s ease-out both;
+    animation: addition-trace 2.75s ease-out both;
   }
 
   .scene-active .addition-fluctuation__path--rare .addition-fluctuation__track {
-    animation: addition-trace 1.4s ease-out 0.22s both;
+    animation: addition-trace 2.65s ease-out 0.5s both;
   }
 }
 

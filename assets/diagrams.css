@@ -305,31 +305,31 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .scene-active .diagram-horizon-boundary {
-    animation: diagram-expand 1.45s ease-out both;
+    animation: diagram-expand 3s ease-out both;
   }
 
   .scene-active .diagram-pattern-tile {
-    animation: diagram-rise 0.52s ease-out calc(var(--index) * 0.2s) both;
+    animation: diagram-rise 0.7s ease-out calc(var(--index) * 0.55s) both;
   }
 
   .scene-active .diagram-patterns-connector {
-    animation: diagram-fade 0.5s ease-out 0.95s both;
+    animation: diagram-fade 0.7s ease-out 2.35s both;
   }
 
   .scene-active .diagram-tree-link {
-    animation: diagram-draw 0.5s ease-out calc(var(--index) * 0.34s) both;
+    animation: diagram-draw 1.35s ease-out calc(var(--index) * 0.9s) both;
   }
 
   .scene-active .diagram-tree-dot {
-    animation: diagram-fade 0.42s ease-out calc(var(--index) * 0.34s) both;
+    animation: diagram-fade 1.05s ease-out calc(var(--index) * 0.9s) both;
   }
 
   .scene-active .diagram-timeline-portrait {
-    animation: diagram-rise 0.85s ease-out both;
+    animation: diagram-rise 1.35s ease-out both;
   }
 
   .scene-active .diagram-timeline-track {
-    animation: diagram-draw 0.9s ease-out 0.5s both;
+    animation: diagram-draw 2.25s ease-out 0.75s both;
   }
 }
 
