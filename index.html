@@ -244,33 +244,41 @@
         </div>
       </section>
 
-      <section class="chapter chapter--reverse" aria-labelledby="coin-title">
+      <section class="chapter chapter--reverse chapter--coin" aria-labelledby="coin-title">
         <div class="chapter__inner wrap">
           <div class="chapter__copy">
             <h2 id="coin-title">Когда шанс растёт</h2>
             <p>У честной монеты при одном броске два равновероятных исхода — орёл и решка. Шанс увидеть орла равен одной второй. Теперь бросим монету дважды. Первый результат не меняет шансы второго, поэтому четыре пары на схеме равновероятны.</p>
-            <p>Нас интересует хотя бы один орёл. Он есть в трёх парах из четырёх. Две решки подряд — единственный случай без орла. Значит, шанс хотя бы одного орла вырос с одной второй до трёх четвертей.</p>
-            <p class="chapter__question">Такой вывод возможен, когда известны правила. Для космического двойника правило тоже нужно обосновать. Какие состояния могут возникать в разных областях космоса и насколько часто?</p>
           </div>
           <figure class="figure">
-            <div class="figure__art" data-scene role="img" aria-label="ОО, ОР и РО отмечены галочками. РР не содержит орла.">
-              <div class="diagram-art diagram-coin" aria-hidden="true">
-                <div class="diagram-coin__grid">
-                  <div class="diagram-coin__case diagram-coin__case--match" style="--diagram-delay: 0s">
-                    <span class="diagram-coin__mark">✓</span>
-                    <span class="diagram-coin__result">ОО</span>
-                  </div>
-                  <div class="diagram-coin__case diagram-coin__case--match" style="--diagram-delay: 0.13s">
-                    <span class="diagram-coin__mark">✓</span>
-                    <span class="diagram-coin__result">ОР</span>
-                  </div>
-                  <div class="diagram-coin__case diagram-coin__case--match" style="--diagram-delay: 0.26s">
-                    <span class="diagram-coin__mark">✓</span>
-                    <span class="diagram-coin__result">РО</span>
-                  </div>
-                  <div class="diagram-coin__case" style="--diagram-delay: 0.39s">
-                    <span class="diagram-coin__mark">—</span>
-                    <span class="diagram-coin__result">РР</span>
+            <div class="figure__art figure__art--coin" data-scene role="img" aria-label="Дерево двух бросков. Первый бросок даёт орла или решку. После каждого из этих исходов второй бросок снова даёт орла или решку. ОО, ОР и РО содержат хотя бы одного орла. РР — две решки. Шанс хотя бы одного орла растёт с одной второй за один бросок до трёх четвертей за два.">
+              <div class="coin-tree" aria-hidden="true">
+                <div class="coin-tree__columns">
+                  <span>Монета</span>
+                  <span>1-й бросок</span>
+                  <span>2-й бросок</span>
+                </div>
+                <div class="diagram-tree coin-tree__plot">
+                  <span class="diagram-tree-link diagram-tree-rise" style="--x: 12%; --y: 25%; --width: 27%; --height: 25%; --index: 0"></span>
+                  <span class="diagram-tree-link diagram-tree-fall" style="--x: 12%; --y: 75%; --width: 27%; --height: 25%; --index: 0"></span>
+                  <span class="diagram-tree-link diagram-tree-rise coin-tree__match-path" style="--x: 39%; --y: 12.5%; --width: 39%; --height: 12.5%; --index: 1"></span>
+                  <span class="diagram-tree-link diagram-tree-fall coin-tree__match-path" style="--x: 39%; --y: 37.5%; --width: 39%; --height: 12.5%; --index: 1"></span>
+                  <span class="diagram-tree-link diagram-tree-rise coin-tree__match-path" style="--x: 39%; --y: 62.5%; --width: 39%; --height: 12.5%; --index: 1"></span>
+                  <span class="diagram-tree-link diagram-tree-fall coin-tree__miss-path" style="--x: 39%; --y: 87.5%; --width: 39%; --height: 12.5%; --index: 1"></span>
+                  <span class="coin-tree__node coin-tree__node--start" style="--x: 12%; --y: 50%"></span>
+                  <span class="coin-tree__node" style="--x: 39%; --y: 25%">О</span>
+                  <span class="coin-tree__node" style="--x: 39%; --y: 75%">Р</span>
+                  <span class="coin-tree__leaf coin-tree__leaf--match" style="--y: 12.5%">ОО <span class="coin-tree__mark">✓</span></span>
+                  <span class="coin-tree__leaf coin-tree__leaf--match" style="--y: 37.5%">ОР <span class="coin-tree__mark">✓</span></span>
+                  <span class="coin-tree__leaf coin-tree__leaf--match" style="--y: 62.5%">РО <span class="coin-tree__mark">✓</span></span>
+                  <span class="coin-tree__leaf" style="--y: 87.5%">РР <span class="coin-tree__mark">—</span></span>
+                </div>
+                <div class="coin-tree__summary">
+                  <p>Шанс хотя бы одного орла</p>
+                  <div class="coin-tree__odds">
+                    <div><strong>½</strong><span>один бросок</span></div>
+                    <span class="coin-tree__arrow">→</span>
+                    <div><strong>¾</strong><span>два броска</span></div>
                   </div>
                 </div>
               </div>
@@ -279,6 +287,10 @@
               О — орёл, Р — решка. ОО, ОР, РО, РР. Орёл есть в 3 из 4 пар.
             </figcaption>
           </figure>
+          <div class="chapter__explanation">
+            <p>Нас интересует хотя бы один орёл. Он есть в трёх парах из четырёх. Две решки подряд — единственный случай без орла. Значит, шанс хотя бы одного орла вырос с одной второй до трёх четвертей.</p>
+            <p class="chapter__question">Такой вывод возможен, когда известны правила. Для космического двойника правило тоже нужно обосновать. Какие состояния могут возникать в разных областях космоса и насколько часто?</p>
+          </div>
         </div>
       </section>
 

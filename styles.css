@@ -158,6 +158,13 @@ figure {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.chapter--coin .chapter__inner {
+  grid-template-areas: "figure copy" "figure explanation";
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  row-gap: 1rem;
+}
+
 .chapter__comparison {
   display: grid;
   grid-area: comparison;
@@ -213,7 +220,8 @@ figure {
 }
 
 .chapter__copy .chapter__question,
-.chapter--light .chapter__question {
+.chapter--light .chapter__question,
+.chapter--coin .chapter__question {
   padding-left: 0.86rem;
   border-left: 1px solid #9183c8;
   color: #cfdbfa;
@@ -489,6 +497,11 @@ figure {
 
   .chapter--comparison .chapter__inner {
     grid-template-areas: "copy" "comparison" "explanation" "question";
+  }
+
+  .chapter--coin .chapter__inner {
+    grid-template-areas: "copy" "figure" "explanation";
+    grid-template-rows: auto auto auto;
   }
 
   .chapter__comparison {

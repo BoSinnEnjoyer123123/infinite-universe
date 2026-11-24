@@ -80,21 +80,16 @@
   box-shadow: 0 0 0 3px #f0ae7340, 0 0 13px #ffd8aa;
 }
 
-.diagram-sequence,
-.diagram-coin {
+.diagram-sequence {
   display: grid;
   place-items: center;
   background: radial-gradient(ellipse at center, #2e3e6536, transparent 75%);
 }
 
-.diagram-sequence__row,
-.diagram-coin__grid {
+.diagram-sequence__row {
   display: grid;
   width: 86%;
   gap: clamp(0.36rem, 1.65vw, 0.9rem);
-}
-
-.diagram-sequence__row {
   grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 0.7fr);
 }
 
@@ -125,49 +120,122 @@
   background: transparent;
 }
 
-.diagram-coin__grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.figure__art--coin {
+  display: block;
+  aspect-ratio: auto;
+  background: radial-gradient(ellipse at 70% 35%, #1a454351, transparent 70%), var(--surface);
 }
 
-.diagram-coin__case {
+.coin-tree {
+  padding: clamp(0.85rem, 2.6vw, 1.75rem);
+}
+
+.coin-tree__columns {
   display: grid;
-  place-content: center;
-  justify-items: center;
-  min-width: 0;
-  aspect-ratio: 0.9;
-  gap: 0.28rem;
-  border: 1px solid #6d81a761;
-  border-radius: 0.55rem;
-  background: linear-gradient(150deg, #1d263c, #151c2d);
-  color: #aab8d4;
+  grid-template-columns: 24% 30% 46%;
+  color: var(--caption);
+  font-size: clamp(0.72rem, 1.35vw, 0.86rem);
   text-align: center;
 }
 
-.diagram-coin__case--match {
-  border-color: #96c4ff8c;
-  background: linear-gradient(150deg, #243b58, #192942);
-  color: #e2edff;
+.coin-tree__plot {
+  position: relative;
+  height: clamp(11.5rem, 37vw, 15rem);
+  margin-block: 0.3rem 0.7rem;
+  background: none;
 }
 
-.diagram-coin__mark {
-  display: grid;
-  place-items: center;
-  width: clamp(0.95rem, 4vw, 1.5rem);
-  aspect-ratio: 1;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font-size: clamp(0.7rem, 2.6vw, 0.96rem);
+.coin-tree__match-path {
+  --branch-ink: #7ebcbf;
+}
+
+.coin-tree__miss-path {
+  --branch-ink: #7e8aa6;
+}
+
+.coin-tree__node,
+.coin-tree__leaf {
+  position: absolute;
+  z-index: 1;
+  top: var(--y);
+  left: var(--x, 78%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #7897c783;
+  background: #17243a;
+  color: #e7f1ff;
+  font-weight: 650;
   line-height: 1;
 }
 
-.diagram-coin__case--match .diagram-coin__mark {
-  color: #c6e4ff;
+.coin-tree__node {
+  display: grid;
+  place-items: center;
+  width: clamp(1.65rem, 5vw, 2.25rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
 
-.diagram-coin__result {
-  font-size: clamp(0.86rem, 3.3vw, 1.44rem);
-  font-weight: 650;
-  line-height: 1.12;
+.coin-tree__node--start {
+  width: clamp(1.9rem, 6vw, 2.9rem);
+  border-color: #f7cc7e;
+  background: radial-gradient(circle, #77563a 46%, #edc178 49% 55%, #8f653c 58% 71%, #d5a359 75%);
+  box-shadow: 0 0 1.05rem #f7cc7e26;
+}
+
+.coin-tree__leaf {
+  display: flex;
+  min-width: clamp(3.4rem, 12vw, 5rem);
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 0.45rem;
+  color: #b6c1d6;
+}
+
+.coin-tree__leaf--match {
+  border-color: #8de2d79b;
+  background: #193638;
+  color: #d8fffa;
+}
+
+.coin-tree__mark {
+  color: inherit;
+  font-size: 0.9em;
+}
+
+.coin-tree__summary {
+  padding-top: 0.8rem;
+  border-top: 1px solid #78b8c355;
+  color: var(--caption);
+  font-size: clamp(0.8rem, 1.4vw, 0.92rem);
+  text-align: center;
+}
+
+.coin-tree__odds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.8rem, 4vw, 2.5rem);
+  margin-top: 0.55rem;
+}
+
+.coin-tree__odds > div {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.coin-tree__odds strong {
+  color: #b9f8ed;
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 5vw, 3.1rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.coin-tree__arrow {
+  color: #9ce4d9;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
 }
 
 .diagram-space {
@@ -235,18 +303,38 @@
     animation: diagram-andromeda-reveal 1.65s ease-out 0.18s both;
   }
 
-  .scene-active .diagram-sequence__number:not(.diagram-sequence__number--first),
-  .scene-active .diagram-coin__case {
+  .scene-active .diagram-sequence__number:not(.diagram-sequence__number--first) {
     animation: diagram-item-appear 0.75s ease-out calc(var(--diagram-delay) * 2.25) both;
   }
 
-  .scene-active .diagram-coin__mark {
-    animation: diagram-item-appear 0.7s ease-out 2.3s both;
+  .scene-active .coin-tree__node:not(.coin-tree__node--start) {
+    animation: diagram-item-appear 0.65s ease-out 0.48s both;
+  }
+
+  .scene-active .coin-tree__leaf {
+    animation: diagram-item-appear 0.65s ease-out 1.5s both;
+  }
+
+  .scene-active .coin-tree__match-path {
+    animation: diagram-draw 1.35s ease-out 0.9s both, coin-path-highlight 0.65s ease-out 2.2s both;
+  }
+
+  .scene-active .coin-tree__mark {
+    animation: diagram-item-appear 0.55s ease-out 2.25s both;
+  }
+
+  .scene-active .coin-tree__odds {
+    animation: diagram-item-appear 0.8s ease-out 2.55s both;
   }
 
   .scene-active .diagram-space__region--distant {
     animation: diagram-item-appear 1.7s ease-out 0.4s both;
   }
+}
+
+@keyframes coin-path-highlight {
+  from { filter: brightness(0.8); }
+  to { filter: brightness(1.25); }
 }
 
 @keyframes diagram-light-travel {
